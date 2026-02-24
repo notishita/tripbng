@@ -323,11 +323,11 @@ graph LR
     end
 
     subgraph Routes
-        R1[/auth/*]
-        R2[/flights/*]
-        R3[/hotels/*]
-        R4[/bookings/*]
-        R5[/user/*]
+        R1["/auth/*"]
+        R2["/flights/*"]
+        R3["/hotels/*"]
+        R4["/bookings/*"]
+        R5["/user/*"]
     end
 
     subgraph Services
