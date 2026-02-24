@@ -208,13 +208,15 @@ flowchart TB
 ## 8. Use Case Diagram
 
 ```mermaid
-graph TD
+flowchart TD
     subgraph Actors
-        USER[User]
-        ADMIN[Admin]
+        direction LR
+        USER((User))
+        ADMIN((Admin))
     end
 
-    subgraph Use Cases
+    subgraph "Use Cases"
+        direction TB
         UC1[Register]
         UC2[Login]
         UC3[Search Flights]
@@ -226,22 +228,25 @@ graph TD
         UC9[Manage Profile]
         UC10[View Wishlist]
         UC11[Receive Notifications]
+        
+        %% Force vertical stacking
+        UC1 ~~~ UC2 ~~~ UC3 ~~~ UC4 ~~~ UC5 ~~~ UC6 ~~~ UC7 ~~~ UC8 ~~~ UC9 ~~~ UC10 ~~~ UC11
     end
 
-    USER --> UC1
-    USER --> UC2
-    USER --> UC3
-    USER --> UC4
-    USER --> UC5
-    USER --> UC6
-    USER --> UC7
-    USER --> UC8
-    USER --> UC9
-    USER --> UC10
-    USER --> UC11
+    USER --- UC1
+    USER --- UC2
+    USER --- UC3
+    USER --- UC4
+    USER --- UC5
+    USER --- UC6
+    USER --- UC7
+    USER --- UC8
+    USER --- UC9
+    USER --- UC10
+    USER --- UC11
 
-    ADMIN --> UC8
-    ADMIN --> UC11
+    ADMIN --- UC8
+    ADMIN --- UC11
 ```
 
 ## 9. Database Schema Overview
